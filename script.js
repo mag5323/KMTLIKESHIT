@@ -40,4 +40,6 @@ d3.json("data/2014_estate.json")
       },
       data: data
     };
+
+    var pie = new d3pie('pie', output);
   });
