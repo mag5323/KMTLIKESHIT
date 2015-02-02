@@ -14,4 +14,30 @@ d3.json("data/2014_estate.json")
       var sum = _.reduce(price, function(memo, num){ return memo + num; }, 0);
       data.content.push({label: key, value: sum});
     }
+
+    var output = {
+      header: {
+        title: {
+          text: '中國國民黨取自國家土地市值統計'
+        }
+      },
+      labels: {
+        inner: {
+          format: 'percentage'
+        }
+      },
+      tooltips: {
+        enabled: true,
+        type: 'placeholder',
+        string: 'NTD{value}',
+        placeholderParser: function(index, data) {
+          data.value = data.value.toLocaleString();
+        }
+      },
+      size: {
+        'canvasHeight': 700,
+        'canvasWidth': 1200
+      },
+      data: data
+    };
   });
