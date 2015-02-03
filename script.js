@@ -15,6 +15,9 @@ d3.json("data/2014_estate.json")
       data.content.push({label: key, value: sum});
     }
 
+    var total = _.reduce(_.pluck(data.content, 'value'), function(memo, num){ return memo + num;});
+    document.getElementsByTagName('h1')[0].innerHTML = '總計 : ' + total.toLocaleString() + '元';
+
     var output = {
       header: {
         title: {
