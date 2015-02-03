@@ -11,7 +11,7 @@ d3.json("data/2014_estate.json")
       var kmt = estate[key].data;
       var priceTmp = _.pluck(kmt, '2014年市值推估');
       var price = _.pluck(priceTmp, '總價（元）');
-      var sum = _.reduce(price, function(memo, num){ return memo + num; }, 0);
+      var sum = _.reduce(price, function(memo, num){ return memo + num; });
       data.content.push({label: key, value: sum});
     }
 
